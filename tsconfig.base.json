@@ -15,7 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@vlt-microservices/shared": ["libs/index.ts"]
+      "@vlt-microservices/shared": ["libs/shared/src/index.ts"],
     }
   },
   "exclude": ["node_modules", "tmp"]

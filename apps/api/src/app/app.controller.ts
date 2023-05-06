@@ -2,7 +2,7 @@ import { Body, Controller, Get, Post } from '@nestjs/common';
 import { ApiTags } from '@nestjs/swagger';
 
 import { AppService } from './app.service';
-import { CreateUser } from './auth/dto/createUser.dto';
+import { CreateUserDTO } from './auth/dto/createUser.dto';
 
 @ApiTags('cats')
 @Controller('cats')
@@ -15,7 +15,7 @@ export class AppController {
   }
 
   @Post()
-  createUser(@Body() createUser: CreateUser) {
+  createUser(@Body() createUser: CreateUserDTO) {
     return this.appService.createUser(createUser);
   }
 }

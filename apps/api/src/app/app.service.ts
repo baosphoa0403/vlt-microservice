@@ -1,6 +1,7 @@
 import { Inject, Injectable } from '@nestjs/common';
 import { ClientProxy } from '@nestjs/microservices';
-import { CreateUser } from './auth/dto/createUser.dto';
+import { CreateUserDTO } from './auth/dto/createUser.dto';
+// import { CreateUser } from './auth/dto/createUser.dto';
 
 @Injectable()
 export class AppService {
@@ -15,7 +16,7 @@ export class AppService {
     return { message: 'Hello API' };
   }
 
-  createUser(createUser: CreateUser) {
+  createUser(createUser: CreateUserDTO) {
     this.users.push(createUser);
 
     this.authService.emit('user_created', createUser);

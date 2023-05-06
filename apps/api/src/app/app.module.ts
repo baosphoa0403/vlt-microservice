@@ -1,6 +1,6 @@
-import { SharedModule } from '@vlt-microservices/shared';
 import { Module } from '@nestjs/common';
 import { ClientsModule, Transport } from '@nestjs/microservices';
+import { SharedModule } from '@vlt-microservices/shared';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
