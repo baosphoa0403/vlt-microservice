@@ -3,7 +3,6 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "build": "tsc -p tsconfig.base.json",
     "serve": "nx run-many --parallel --target=serve --all",
     "api": "nx serve api --skip-nx-cache",
     "auth-service": "nx serve auth-service --skip-nx-cache"
