@@ -6,8 +6,7 @@ import { CreateUserDTO } from './auth/dto/createUser.dto';
 @Injectable()
 export class AppService {
   constructor(
-    @Inject('AUTH_SERVICE') private authService: ClientProxy,
-    @Inject('USER_SERVICE') private userService: ClientProxy
+    @Inject('AUTH_SERVICE') private authService: ClientProxy // @Inject('USER_SERVICE') private userService: ClientProxy
   ) {}
 
   private readonly users = [];
@@ -20,6 +19,6 @@ export class AppService {
     this.users.push(createUser);
 
     this.authService.emit('user_created', createUser);
-    this.userService.emit('user_created', createUser);
+    // this.userService.emit('user_created', createUser);
   }
 }

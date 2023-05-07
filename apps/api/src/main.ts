@@ -4,6 +4,7 @@
  */
 
 import { Logger } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 
@@ -11,14 +12,22 @@ import { AppModule } from './app/app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  const configService = app.get(ConfigService);
+
+  app.startAllMicroservices();
+
   const globalPrefix = 'api';
+
   app.setGlobalPrefix(globalPrefix);
-  const port = process.env.PORT || 3000;
+
+  const port = configService.get('SERVER_PORT') || 3000;
+
   const config = new DocumentBuilder()
-    .setTitle('Cats example')
-    .setDescription('The cats API description')
+    .setTitle('Vlt example')
+    .setDescription('The Vlt API description')
     .setVersion('1.0')
-    .addTag('cats')
+    .addTag('Vlt')
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
