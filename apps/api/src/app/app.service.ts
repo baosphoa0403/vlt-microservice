@@ -6,7 +6,7 @@ import { CreateUserDTO } from './auth/dto/createUser.dto';
 @Injectable()
 export class AppService {
   constructor(
-    @Inject('AUTH_SERVICE') private authService: ClientProxy // @Inject('USER_SERVICE') private userService: ClientProxy
+    @Inject('AUTH') private authService: ClientProxy // @Inject('USER_SERVICE') private userService: ClientProxy
   ) {}
 
   private readonly users = [];

@@ -15,8 +15,6 @@ async function bootstrap() {
 
   const configService = app.get(ConfigService);
 
-  app.startAllMicroservices();
-
   const globalPrefix = 'api';
 
   app.setGlobalPrefix(globalPrefix);
@@ -29,6 +27,7 @@ async function bootstrap() {
     .setVersion('1.0')
     .addTag('Vlt')
     .build();
+
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
 

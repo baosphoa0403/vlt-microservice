@@ -1,11 +1,11 @@
 import { Module } from '@nestjs/common';
-import { AppConfigModule } from '@vlt-microservices/shared';
+import { AppConfigModule, RmqModule } from '@vlt-microservices/shared';
 
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 @Module({
-  imports: [AppConfigModule],
+  imports: [AppConfigModule, RmqModule],
   controllers: [AppController],
   providers: [AppService],
 })
